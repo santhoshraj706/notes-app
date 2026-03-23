@@ -8,6 +8,8 @@ app.use(cors())
 
 const authRoutes=require('./routes/auth')
 app.use('/auth',authRoutes)
+const notesRoutes=require('./routes/notes')
+app.use('/notes',notesRoutes)
 const mongoose=require('mongoose')
 
 mongoose.connect(process.env.MONGO_URI).then(()=>console.log("MongoDB connected")).catch((err)=>console.log(err))

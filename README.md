@@ -1,38 +1,41 @@
-# 📝 Notes App (MERN) — In Progress
+# Notes App
 
-## Status
-🚧 Backend complete | Frontend (React) pending
+A full-stack MERN notes application with authentication.
 
-## ✅ Completed
-- `server/server.js` — Express server with middleware and routes
-- `server/models/User.js` — User schema (name, email, hashed password)
-- `server/models/Notes.js` — Note schema (title, content, user)
-- `server/routes/auth.js` — Signup and Login with JWT
-- `server/routes/notes.js` — Full CRUD for notes
-- `server/middleware/auth.js` — JWT token bouncer (protects notes routes)
+## Tech Stack
+- MongoDB Atlas
+- Express.js
+- React.js
+- Node.js
 
-## 🚧 Pending
-- React frontend (client/)
+## Features
+- Signup / Login with JWT authentication
+- Create, Read, Update, Delete notes
+- Protected routes
+- Responsive UI with Bootstrap
 
-## Stack
-MongoDB · Express · React · Node.js · JWT
+## Setup
 
-## Run Locally
+### Backend
 ```bash
 cd server
-node server.js
+npm install
+npm start
 ```
 
-## API Endpoints (Test with Thunder Client / Postman)
+### Frontend
+```bash
+cd client
+npm install
+npm start
+```
 
-| Method | URL | Auth Required | Body |
-|--------|-----|---------------|------|
-| POST | /auth/signup | ❌ | name, email, password |
-| POST | /auth/login | ❌ | email, password |
-| GET | /notes | ✅ | — |
-| POST | /notes | ✅ | title, content |
-| PUT | /notes/:id | ✅ | title, content |
-| DELETE | /notes/:id | ✅ | — |
+## Environment Variables
+Create a `.env` file in the server folder:
+```
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+```
 
-> For protected routes add header: `Authorization: Bearer yourtoken`
-> Get token from /auth/login response
+## Author
+Santhosh — github.com/santhoshraj706
